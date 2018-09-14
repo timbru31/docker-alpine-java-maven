@@ -4,7 +4,7 @@ LABEL maintainer "Tim Brust <tim.brust@sinnerschrader.com>"
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 
-ARG OPENJDK11_ALPINE_URL=https://download.java.net/java/early_access/alpine/27/binaries/openjdk-11+27_linux-x64-musl_bin.tar.gz
+ARG OPENJDK11_ALPINE_URL=https://download.java.net/java/early_access/alpine/28/binaries/openjdk-11+28_linux-x64-musl_bin.tar.gz
 ARG MAVEN_VERSION=3.5.4
 ARG USER_HOME_DIR="/root"
 ARG MAVEN_SHA=ce50b1c91364cb77efe3776f756a6d92b76d9038b0a0782f7d53acf1e997a14d
