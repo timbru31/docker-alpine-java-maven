@@ -4,7 +4,7 @@ A minimal Dockerfile based on Alpine 3.8 with OpenJDK 11 and Maven installed.
 
 ## What's included
 
-* OpenJDK 11 (early access)
+* OpenJDK 11
 * Maven 3.5
 
 ---
