@@ -10,6 +10,8 @@ ARG USER_HOME_DIR="/root"
 ARG MAVEN_SHA=ce50b1c91364cb77efe3776f756a6d92b76d9038b0a0782f7d53acf1e997a14d
 ARG MAVEN_BASE_URL=https://apache.osuosl.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
+SHELL ["/bin/sh", "-o", "pipefail", "-c"]
+
 RUN apk add --no-cache \
   ca-certificates \
   wget \
@@ -17,8 +19,9 @@ RUN apk add --no-cache \
   bash \
   procps
 
+# hadolint ignore=DL4006
 RUN mkdir -p /opt/jdk \
-  && wget -c -O- $OPENJDK11_ALPINE_URL \
+  && curl -fsSL $OPENJDK11_ALPINE_URL \
   | tar -zxC /opt/jdk \
   && rm /opt/jdk/jdk-11/lib/src.zip
 
@@ -27,6 +30,7 @@ ENV PATH=$PATH:$JAVA_HOME/bin
 ENV LANG=C.UTF-8
 
 # Maven depends on openjdk8-jre, so a manual installation is necessary
+# hadolint ignore=DL4006
 RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz ${MAVEN_BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
   && echo "${MAVEN_SHA}  /tmp/apache-maven.tar.gz" | sha256sum -c - \
