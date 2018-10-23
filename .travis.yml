@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  -  docker pull hadolint/hadolint:latest-debian
+  -  docker pull hadolint/hadolint
   
 script:
-  - hadolint Dockerfile
+  - docker run --rm -i hadolint/hadolint < Dockerfile
