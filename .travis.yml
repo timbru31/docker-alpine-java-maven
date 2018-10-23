@@ -1,0 +1,10 @@
+language: generic
+
+services:
+  - docker
+
+before_install:
+  -  docker pull hadolint/hadolint:latest-debian
+  
+script:
+  - hadolint Dockerfile
