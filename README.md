@@ -2,7 +2,7 @@
 
 [![Docker Automated build](https://img.shields.io/docker/automated/timbru31/alpine-java-maven.svg)](https://hub.docker.com/r/timbru31/alpine-java-maven/)
 [![buildx Status](https://github.com/timbru31/docker-alpine-java-maven/workflows/buildx/badge.svg)](https://github.com/timbru31/docker-alpine-java-maven/actions?query=workflow%3Abuildx)
-[![Build Status](https://travis-ci.org/timbru31/docker-alpine-java-maven.svg?branch=master)](https://travis-ci.org/timbru31/docker-alpine-java-maven)
+[![Lint Dockerfiles](https://github.com/timbru31/docker-alpine-java-maven/workflows/Lint%20Dockerfiles/badge.svg)](https://github.com/timbru31/docker-alpine-java-maven/actions?query=workflow%3A%22Lint+Dockerfiles%22)
 
 A minimal Dockerfile based on Azul's OpenJDK 11 with Maven installed.
 
