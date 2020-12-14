@@ -8,7 +8,7 @@ on:
 
 jobs:
   buildx:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Checkout
@@ -51,10 +51,10 @@ jobs:
           platforms: linux/amd64
           tags: timbru31/alpine-java-maven:latest
 
-      - name: Docker Check Manifest
-        if: always() && github.event_name != 'pull_request'
+      - name: Inspect Image
+        if: always() && github.event_name != 'pull_request' && contains(github.ref, 'master')
         run: |
-          docker run --rm mplatform/mquery timbru31/alpine-java-maven:latest
+          docker buildx imagetools inspect timbru31/alpine-java-maven:latest
 
       - name: Clear
         if: always() && github.event_name != 'pull_request'
