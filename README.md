@@ -9,7 +9,7 @@ A minimal Dockerfile based on Azul's OpenJDK 11 with Maven installed.
 ## What's included
 
 - Azul's OpenJDK 11
-- Maven 3.6
+- Maven 3.8
 
 ### Available platforms
 
