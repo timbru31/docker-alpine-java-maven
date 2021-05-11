@@ -4,19 +4,18 @@ LABEL maintainer "Tim Brust <github@timbrust.de>"
 ARG REFRESHED_AT
 ENV REFRESHED_AT $REFRESHED_AT
 
-ARG MAVEN_VERSION=3.6.3
+ARG MAVEN_VERSION=3.8.1
 ARG USER_HOME_DIR="/root"
-ARG MAVEN_SHA=c35a1803a6e70a126e80b2b3ae33eed961f83ed74d18fcd16909b2d44d7dada3203f1ffe726c17ef8dcca2dcaa9fca676987befeadc9b9f759967a8cb77181c0
+ARG MAVEN_SHA=0ec48eb515d93f8515d4abe465570dfded6fa13a3ceb9aab8031428442d9912ec20f066b2afbf56964ffe1ceb56f80321b50db73cf77a0e2445ad0211fb8e38d
 ARG MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
-SHELL ["/bin/sh", "-o", "pipefail", "-c"]
-
-RUN apk add --no-cache \
-  curl
-
 # Maven depends on openjdk8-jre, so a manual installation is necessary
-# hadolint ignore=DL4006
-RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
+SHELL ["/bin/ash", "-eo", "pipefail", "-c"]
+
+RUN apk -U upgrade \
+  && apk add --no-cache \
+    curl \
+  && mkdir -p /usr/share/maven /usr/share/maven/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz ${MAVEN_BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
   && echo "${MAVEN_SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c - \
   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
