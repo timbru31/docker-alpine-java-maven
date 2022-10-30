@@ -1,4 +1,4 @@
-FROM azul/zulu-openjdk-alpine:11
+FROM eclipse-temurin:11-jdk-alpine
 LABEL maintainer "Tim Brust <github@timbrust.de>"
 
 ARG REFRESHED_AT
