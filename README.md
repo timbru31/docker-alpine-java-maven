@@ -9,7 +9,7 @@ A minimal Dockerfile based on Alpine Eclipse Temurin OpenJDK 11 with Maven insta
 ## What's included
 
 - Alpine Eclipse Temurin OpenJDK 11
-- Maven 3.8
+- Maven 3.9
 
 ### Available platforms
 
