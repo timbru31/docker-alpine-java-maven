@@ -6,7 +6,7 @@ ENV REFRESHED_AT $REFRESHED_AT
 
 ARG MAVEN_VERSION=3.9.10
 ARG USER_HOME_DIR="/root"
-ARG MAVEN_SHA=2e24dbea0407489d45b4d8214afff96fb57b54a5ef2bb6878f65fbce9b4141685b878ec5c53e9d07d4b1bf166bb5c4f80d540a13013b133a250ec9d85effa37c
+ARG MAVEN_SHA=4ef617e421695192a3e9a53b3530d803baf31f4269b26f9ab6863452d833da5530a4d04ed08c36490ad0f141b55304bceed58dbf44821153d94ae9abf34d0e1b
 ARG MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
 # Maven depends on openjdk8-jre, so a manual installation is necessary
