@@ -1,8 +1,8 @@
 FROM eclipse-temurin:11-jdk-alpine
-LABEL maintainer "Tim Brust <github@timbrust.de>"
+LABEL maintainer="Tim Brust <github@timbrust.de>"
 
 ARG REFRESHED_AT
-ENV REFRESHED_AT $REFRESHED_AT
+ENV REFRESHED_AT=$REFRESHED_AT
 
 ARG MAVEN_VERSION=3.9.11
 ARG USER_HOME_DIR="/root"
