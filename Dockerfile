@@ -4,9 +4,9 @@ LABEL maintainer="Tim Prüssing <github@timbrust.de>"
 ARG REFRESHED_AT
 ENV REFRESHED_AT=$REFRESHED_AT
 
-ARG MAVEN_VERSION=3.9.12
+ARG MAVEN_VERSION=3.9.14
 ARG USER_HOME_DIR="/root"
-ARG MAVEN_SHA=0a1be79f02466533fc1a80abbef8796e4f737c46c6574ede5658b110899942a94db634477dfd3745501c80aef9aac0d4f841d38574373f7e2d24cce89d694f70
+ARG MAVEN_SHA=d50af8ab5e6005b46a07f0ce9d3719e67cfdf898da988a84871304cd59fb1af0fef2f99dea709e6e66f21f732f905979b5c2dce6b6860406f60a70e84d9cf0b8
 ARG MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
 # Maven depends on openjdk8-jre, so a manual installation is necessary
@@ -22,5 +22,5 @@ RUN apk -U upgrade \
   && rm -f /tmp/apache-maven.tar.gz \
   && ln -s /usr/share/maven/bin/mvn /usr/bin/mvn
 
-ENV MAVEN_HOME /usr/share/maven
-ENV MAVEN_CONFIG "$USER_HOME_DIR/.m2"
+ENV MAVEN_HOME=/usr/share/maven
+ENV MAVEN_CONFIG="$USER_HOME_DIR/.m2"
