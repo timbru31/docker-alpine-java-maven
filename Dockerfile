@@ -4,9 +4,9 @@ LABEL maintainer="Tim Prüssing <github@timbrust.de>"
 ARG REFRESHED_AT
 ENV REFRESHED_AT=$REFRESHED_AT
 
-ARG MAVEN_VERSION=3.9.15
+ARG MAVEN_VERSION=3.9.16
 ARG USER_HOME_DIR="/root"
-ARG MAVEN_SHA=33d81e0ec785f0207e3e5e3ffb61863e1dca5784c15ac3fb5ff105f69cffbea484eb8d473ea60467a63f7b0570eef8622f2fed8eee96acbe668aa313391cddb3
+ARG MAVEN_SHA=831a8591fe20c8243b1dbe7d71e3244f31d1665b0804b2e825e38cbbe5ce0cafb8338851f90780735568773e0a6cd07bbec107cda0b896b008b861075358b6f6
 ARG MAVEN_BASE_URL=https://downloads.apache.org/maven/maven-3/${MAVEN_VERSION}/binaries
 
 # Maven depends on openjdk8-jre, so a manual installation is necessary
